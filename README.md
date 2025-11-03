@@ -1,11 +1,9 @@
-## Student Performance Analysis
+# Student Performance Analysis
 
-# MLProject — Flask-based Machine Learning Web App
+**Student Performance Analysis** is a Flask-based machine learning web application that predicts a student’s **marks or performance score** based on various academic and lifestyle metrics such as study time, attendance, parental education, and other factors.
 
-MLProject is a Flask web application that integrates machine learning models into an interactive web interface.  
-It allows users to input data, generate predictions, and view results directly from a browser — all powered by Python and Flask.
+It provides a simple and interactive web interface to input details and instantly view predicted results — powered by an ML model deployed on **AWS Elastic Beanstalk**.
 
----
 
 ##  Features
 

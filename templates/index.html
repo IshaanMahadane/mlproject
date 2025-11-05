@@ -1,1 +1,166 @@
-<h1>Welcome to the home page</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Exam Performance Prediction</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+      color: #333;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      width: 90%;
+      max-width: 600px;
+      padding: 2rem 2.5rem;
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 0.5rem;
+      color: #2c3e50;
+    }
+
+    .description {
+      font-size: 0.95rem;
+      color: #555;
+      margin-bottom: 1.5rem;
+    }
+
+    form {
+      text-align: left;
+    }
+
+    label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+      color: #444;
+    }
+
+    select,
+    input[type="number"] {
+      width: 100%;
+      padding: 0.6rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      transition: all 0.2s ease-in-out;
+    }
+
+    select:focus,
+    input:focus {
+      outline: none;
+      border-color: #2575fc;
+      box-shadow: 0 0 4px rgba(37, 117, 252, 0.4);
+    }
+
+    .btn {
+      width: 100%;
+      padding: 0.8rem;
+      border: none;
+      border-radius: 6px;
+      background-color: #2575fc;
+      color: white;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s ease-in-out;
+    }
+
+    .btn:hover {
+      background-color: #1a5fd0;
+    }
+
+    h2 {
+      margin-top: 1.8rem;
+      color: #2c3e50;
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 1.5rem;
+      }
+      h1 {
+        font-size: 1.4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Student Exam Performance Prediction</h1>
+    <p class="description">
+      This web app uses machine learning to predict a student's math score 
+      based on demographic and academic factors such as gender, parental education, 
+      lunch type, and test preparation results.
+    </p>
+
+    <form action="/predictdata" method="post">
+      <label>Gender</label>
+      <select name="gender" required>
+        <option value="" disabled selected>Select your Gender</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+      </select>
+
+      <label>Race or Ethnicity</label>
+      <select name="race_ethnicity" required>
+        <option value="" disabled selected>Select your group</option>
+        <option value="group A">Group A</option>
+        <option value="group B">Group B</option>
+        <option value="group C">Group C</option>
+        <option value="group D">Group D</option>
+        <option value="group E">Group E</option>
+      </select>
+
+      <label>Parental Level of Education</label>
+      <select name="parental_level_of_education" required>
+        <option value="" disabled selected>Select Parent Education</option>
+        <option value="associate's degree">associate's degree</option>
+        <option value="bachelor's degree">bachelor's degree</option>
+        <option value="high school">high school</option>
+        <option value="master's degree">master's degree</option>
+        <option value="some college">some college</option>
+        <option value="some high school">some high school</option>
+      </select>
+
+      <label>Lunch Type</label>
+      <select name="lunch" required>
+        <option value="" disabled selected>Select Lunch Type</option>
+        <option value="free/reduced">free/reduced</option>
+        <option value="standard">standard</option>
+      </select>
+
+      <label>Test Preparation Course</label>
+      <select name="test_preparation_course" required>
+        <option value="" disabled selected>Select Test Course</option>
+        <option value="none">None</option>
+        <option value="completed">Completed</option>
+      </select>
+
+      <label>Writing Score (out of 100)</label>
+      <input type="number" name="writing_score" min="0" max="100" placeholder="Enter your Writing Score" required />
+
+      <label>Reading Score (out of 100)</label>
+      <input type="number" name="reading_score" min="0" max="100" placeholder="Enter your Reading Score" required />
+
+      <button type="submit" class="btn">Predict your Maths Score</button>
+    </form>
+
+    <h2>Prediction: {{ prediction_text }}</h2>
+  </div>
+</body>
+</html>

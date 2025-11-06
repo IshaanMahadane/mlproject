@@ -20,7 +20,7 @@ It provides a simple and interactive web interface to input details and instantl
 The project is deployed and live on **AWS Elastic Beanstalk**.  
 You can access it using the link below:
 
- [**Student Performance Analysis (Live App)**](http://studentperformanceanalysis.eu-north-1.elasticbeanstalk.com/predictdata)
+ [**Student Performance Analysis (Live App)**](http://studentperformanceanalysis.eu-north-1.elasticbeanstalk.com/)
 
 This endpoint `/predictdata` allows users to submit input features for prediction through the web interface.  
 It’s powered by Flask on AWS Elastic Beanstalk.

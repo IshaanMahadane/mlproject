@@ -160,7 +160,9 @@
       <button type="submit" class="btn">Predict your Maths Score</button>
     </form>
 
-    <h2>Prediction: {{ prediction_text }}</h2>
+    {% if prediction_text %}
+      <h2>Prediction: {{ prediction_text }}</h2>
+    {% endif %}
   </div>
 </body>
 </html>
